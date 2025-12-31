@@ -6,6 +6,53 @@ from deep_translator import GoogleTranslator # ⭐️ 匯入翻譯工具
 
 #設定網頁
 st.set_page_config(page_title="名人名言產生器", page_icon="✨")
+st.markdown(
+    """
+    <style>
+    /* 1. 全域背景 (主區塊) */
+    .stApp {
+        background-color: #FFF0F5 !important;
+    }
+
+    /* 2. 上方標題列 (Top Header)  */
+    header[data-testid="stHeader"] {
+        background-color: #FFF0F5 !important; /* 跟背景一樣顏色 */
+        color: #4A4A4A !important;
+    }
+
+    /* 3. 側邊欄 (Sidebar) */
+    [data-testid="stSidebar"] {
+        background-color: #FFFFFF !important; /* 純白，讓選單更清晰 */
+        border-right: 1px solid #FADADD;
+    }
+
+    /* 4. 側邊欄內的文字與下拉選單標籤 */
+    [data-testid="stSidebar"] .stMarkdown p, 
+    [data-testid="stSidebar"] label {
+        color: #4A4A4A !important;
+        font-weight: bold;
+    }
+
+    /* 5. 修改按鈕 */
+    button[kind="primary"] {
+        background-color: #D87093 !important;
+        color: white !important;
+        border-radius: 12px !important;
+        border: none !important;
+    }
+    
+    button[kind="primary"]:hover {
+        background-color: #C71585 !important;
+    }
+
+    /* 6. 讓整體的文字都變成深灰色 */
+    h1, h2, h3, p, span, li {
+        color: #4A4A4A !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 #名人清單與網址
 PEOPLE = {
